@@ -1,9 +1,9 @@
 import React from "react";
 import { createBrowserRouter } from "react-router-dom";
 
-// import MainLayout from "@/layouts/MainLayout";
-// import ManageLayout from "@/layouts/ManageLayout";
-// import QuestionLayout from "@/layouts/QuestionLayout";
+import MainLayout from "@/layouts/MainLayout/index";
+import ManageLayout from "@/layouts/ManageLayout/index";
+import QuestionLayout from "@/layouts/QuestionLayout/index";
 
 import Home from "@/pages/Home";
 import Login from "@/pages/Login";
@@ -18,7 +18,7 @@ import Stat from "@/pages/Question/Stat";
 const router = createBrowserRouter([
   {
     path: "/",
-    // element: <MainLayout />,
+    element: <MainLayout />,
     children: [
       {
         path: "/",
@@ -34,7 +34,7 @@ const router = createBrowserRouter([
       },
       {
         path: "manage",
-        // element: <ManageLayout />,
+        element: <ManageLayout />,
         children: [
           {
             path: "list",
@@ -58,7 +58,7 @@ const router = createBrowserRouter([
   },
   {
     path: "question",
-    // element: <QuestionLayout />,
+    element: <QuestionLayout />,
     children: [
       {
         path: "edit/:id",
