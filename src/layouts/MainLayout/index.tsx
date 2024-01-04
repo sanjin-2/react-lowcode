@@ -1,18 +1,25 @@
 import React, { FC } from "react";
 import { Outlet } from "react-router-dom";
 import { Layout, Spin } from "antd";
-import { useLoadUserData } from "@/hooks";
+import { useLoadUserData, useNavPage } from "@/hooks";
 import styles from "./index.module.scss";
+import Logo from "@/components/Logo";
+import UserInfo from "@/components/UserInfo";
 
 const { Header, Content, Footer } = Layout;
 
 const MainLayout: FC = () => {
   const { waitingUserData } = useLoadUserData();
+  useNavPage(waitingUserData);
   return (
     <Layout>
       <Header className={styles.header}>
-        <div className={styles.left}>logo</div>
-        <div className={styles.right}>user</div>
+        <div className={styles.left}>
+          <Logo />
+        </div>
+        <div className={styles.right}>
+          <UserInfo />
+        </div>
       </Header>
       <Layout className={styles.main}>
         <Content>

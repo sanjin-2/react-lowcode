@@ -4,7 +4,6 @@ import axios, { ResDataType } from "./ajax";
 export async function getUserInfoService(): Promise<ResDataType> {
   const url = "/api/user/info";
   const data = (await axios.get(url)) as ResDataType;
-  console.log("dfaqi1");
   return data;
 }
 
